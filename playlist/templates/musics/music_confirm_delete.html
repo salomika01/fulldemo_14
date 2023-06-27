@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Confirmation</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        form { margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>Delete Music</h1>
+    <p>Are you sure you want to delete "{{ music.title }}"?</p>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" style="background-color: red; color: white; padding: 10px 20px;">Yes, delete</button>
+    </form>
+    <a href="{% url 'music_detail' music.pk %}" style="color: blue;">No, take me back</a>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Musics</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        h1 { color: darkblue; }
+        a { color: blue; }
+    </style>
+</head>
+<body>
+    <h1>Musics</h1>
+    {% for music in musics %}
+        <h2><a href="{% url 'music_detail' music.pk %}">{{ music.title }}</a></h2>
+    {% empty %}
+        <p>No musics available.</p>
+    {% endfor %}
+</body>
+</html>
